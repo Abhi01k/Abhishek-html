@@ -1,0 +1,83 @@
+<!doctype html>
+<html>
+<head>
+    <style>
+        body, 
+        html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: 'cambria', sans-serif;
+            background: linear-gradient(to right, #ff5f6d, #ffc371);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .Hero {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .clock-container {
+            position: relative;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 20px 40px;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            color: #fff;
+            text-align: center;
+            font-size: 3em;
+            letter-spacing: 0.05em;
+        }
+        .clock span {
+            display: inline-block;
+            min-width: 45px;
+        }
+        .colon {
+            display: inline-block;
+            min-width: 10px;
+        }
+        .title {
+            position: left;
+            Margin-top: 0.05  ;
+            right: 40px;
+            font-size: 0.5em;
+            background: rgba(0, 0, 0, 0.3);
+            padding: 2px 4px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="Hero">
+        <div class="clock-container">
+            <div class="title" align="center"><b>Digital Time</b></div>
+            <div class="clock">
+                <span id="hrs">00</span>
+                <span class="colon">:</span>
+                <span id="min">00</span>
+                <span class="colon">:</span>
+                <span id="sec">00</span>
+            </div>
+        </div>
+    </div>
+    <script>
+        function updateClock() {
+            const now = new Date();
+            const hrs = String(now.getHours()).padStart(2, '0');
+            const min = String(now.getMinutes()).padStart(2, '0');
+            const sec = String(now.getSeconds()).padStart(2, '0');
+
+            document.getElementById('hrs').textContent = hrs;
+            document.getElementById('min').textContent = min;
+            document.getElementById('sec').textContent = sec;
+        }
+
+        setInterval(updateClock, 1000);
+        updateClock();
+    </script>
+</body>
+</html>

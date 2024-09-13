@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gmail</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            display: flex;
+            height: 100vh;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #fff;
+            border-bottom: 1px solid #ddd;
+            width: 100%;
+        }
+
+        .header-left {
+            display: flex;
+            align-items: center;
+        }
+
+        .header-left img {
+            height: 30px;
+        }
+
+        .header-left h1 {
+            margin-left: 10px;
+            font-size: 1.2rem;
+        }
+
+        .header-right {
+            display: flex;
+            align-items: center;
+        }
+
+        .header-right input {
+            padding: 5px 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            margin-right: 10px;
+        }
+
+        .header-right button {
+            padding: 5px 10px;
+            border: none;
+            background-color: #4CAF50;
+            color: white;
+            border-radius: 3px;
+        }
+
+        .sidebar {
+            width: 200px;
+            background-color: #f5f5f5;
+            padding: 20px;
+            height: 100%;
+        }
+
+        .sidebar-title {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .sidebar-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .sidebar-list li {
+            padding: 5px 0;
+            cursor: pointer;
+        }
+
+        .content {
+            flex: 1;
+            padding: 20px;
+            background-color: #f0f0f0;
+        }
+
+        .content-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .content-header h2 {
+            margin: 0;
+        }
+
+        .content-tabs {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 20px;
+        }
+
+        .content-tab {
+            padding: 10px 20px;
+            background-color: #eee;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        .content-tab.active {
+            background-color: #fff;
+        }
+
+        .content-body {
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 3px;
+            background-color: #fff;
+            min-height: 60vh;
+        }
+        .settings-icon {
+            margin-left: 10px;
+            cursor: pointer;
+        }
+        .settings-icon i {
+            font-size: 1.2rem;
+            color: #ccc;
+        }
+        .status-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #fff;
+            border-top: 1px solid #ddd;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        .status-bar-left {
+            display: flex;
+            align-items: center;
+        }
+        .status-bar-left span {
+            margin-left: 10px;
+        }
+        .status-bar-right {
+            display: flex;
+            align-items: center;
+        }
+        .status-bar-right span {
+            margin-left: 10px;
+        }
+        .status-bar-right a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        .status-bar-right a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <div class="sidebar-title">
+                <i class="material-icons">create</i>
+                Compose
+            </div>
+            <div class="sidebar-title">
+                <i class="material-icons">inbox</i>
+                Inbox
+            </div>
+            <ul class="sidebar-list">
+                <li><i class="material-icons">star</i> Starred</li>
+                <li><i class="material-icons">snooze</i> Snoozed</li>
+                <li><i class="material-icons">send</i> Sent</li>
+                <li><i class="material-icons">drafts</i> Drafts</li>
+                <li><i class="material-icons">more_vert</i> More</li>
+            </ul>
+            <div class="sidebar-title">
+                Labels
+            </div>
+            <ul class="sidebar-list">
+                <li><i class="material-icons">label</i> Chargeback Status Rais...</li>
+                <li><i class="material-icons">label</i> Dynamo ChargeBack</li>
+                <li><i class="material-icons">label</i> InstaFlexi Chargeback</li>
+                <li><i class="material-icons">label</i> Leafpay Chargeback</li>
+                <li><i class="material-icons">label</i> Mix Company Chargeba...</li>
+                <li><i class="material-icons">label</i> Parb Chargeback</li>
+            </ul>
+        </div>
+        <div class="content">
+            <div class="header">
+                <div class="header-left">
+                    <img src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png" alt="Gmail Logo">
+                    <h1>Gmail</h1>
+                </div>
+                <div class="header-right">
+                    <input type="text" placeholder="Search mail">
+                    <button>Search</button>
+                    <div class="settings-icon">
+                        <i class="material-icons">settings</i>
+                    </div>
+                </div>
+            </div>
+            <div class="content-header">
+                <h2>Your Primary tab is empty.</h2>
+                <p>Personal messages and messages that don't appear in other tabs will be shown here.</p>
+                <p>To add or remove tabs click <a href="#">inbox settings</a>.</p>
+            </div>
+            <div class="content-tabs">
+                <div class="content-tab active" id="primary">Primary</div>
+                <div class="content-tab" id="promotions">Promotions</div>
+                <div class="content-tab" id="social">Social</div>
+                <div class="content-tab" id="updates">Updates</div>
+                <div class="content-tab" id="forums">Forums</div>
+            </div>
+            <div class="content-body">
+                <p>
+                    This is the content of the Primary tab. You can customize the content of each tab as needed.
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="status-bar">
+        <div class="status-bar-left">
+            <span>0.21 GB of 15 GB used</span>
+        </div>
+        <div class="status-bar-right">
+            <span>Last account activity: 15 hours ago</span>
+            <a href="#">Details</a>
+        </div>
+    </div>
+
+    <script>
+        const tabs = document.querySelectorAll('.content-tab');
+        const contentBody = document.querySelector('.content-body');
+
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                // Remove the active class from all tabs
+                tabs.forEach(t => t.classList.remove('active'));
+
+                // Add the active class to the clicked tab
+                tab.classList.add('active');
+
+                // Update the content body based on the clicked tab
+                const tabId = tab.id;
+                if (tabId === 'primary') {
+                    contentBody.innerHTML = `
+                        <p>This is the content of the Primary tab. You can customize the content of each tab as needed.</p>
+                    `;
+                } else if (tabId === 'promotions') {
+                    contentBody.innerHTML = `
+                        <p>This is the content of the Promotions tab. You can customize the content of each tab as needed.</p>
+                    `;
+                } else if (tabId === 'social') {
+                    contentBody.innerHTML = `
+                        <p>This is the content of the Social tab. You can customize the content of each tab as needed.</p>
+                    `;
+                } else if (tabId === 'updates') {
+                    contentBody.innerHTML = `
+                        <p>This is the content of the Updates tab. You can customize the content of each tab as needed.</p>
+                    `;
+                } else if (tabId === 'forums') {
+                    contentBody.innerHTML = `
+                        <p>This is the content of the Forums tab. You can customize the content of each tab as needed.</p>
+                    `;
+                }
+            });
+        });
+    </script>
+</body>
+</html>
